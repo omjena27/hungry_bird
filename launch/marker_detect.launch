@@ -25,8 +25,8 @@
     <param name="inner_diameter" value="$(arg inner_diameter)"/> 
 
     <!-- Remap the topics to the corresponding topics -->
-    <remap from="/camera/camera_info" to=" "/>
-    <remap from="/camera/image_rect_color" to=" "/>
+  <!--   <remap from="/camera/camera_info" to=" "/>
+    <remap from="/camera/image_rect_color" to=" "/> -->
 
   </node>
 
@@ -39,8 +39,8 @@
     <param name="use_camera_info"    value="true"/> 
 
     <!-- Remap the topics to the corresponding topics -->
-  	<remap from="/camera_info" to=" " />
-    <remap from="/image" to=" " />
+<!--   	<remap from="/camera_info" to=" " />
+    <remap from="/image" to=" " /> -->
   </node>
 
   <!-- Running image_view node to display WhyCon output -->
