@@ -24,10 +24,27 @@ class Marker_detect():
 
 	# Callback for /whycon/poses
 	def whycon_data(self,msg):
+		for i in range(0,len(msg.poses)):
+			pos_x = round(msg.poses[i].position.x,3)
+			pos_y = round(msg.poses[i].position.y,3)
+			pos_z = round(msg.poses[i].position.z,3)
+			self.whycon_marker[i] = [pos_x,pos_y,pos_z]
+
+
 
 
 	# Callback for /aruco_marker_publisher/markers
 	def aruco_data(self,msg):
+		for i in range(0,len(msg.markers)):
+			aruco_id = msg.markers[i].id
+			orient_x = round(msg.markers[i].pose.pose.orientation.x,3)
+			orient_y = round(msg.markers[i].pose.pose.orientation.y,3)
+			orient_z = round(msg.markers[i].pose.pose.orientation.z,3)
+			orient_w = round(msg.markers[i].pose.pose.orientation.w,3)
+			self.aruco_marker[aruco_id] = [orient_x,orient_y,orient_z,orient_w]
+
+		# Above is the method in which index is set according to the id of the aruco marker
+		# However, in task0, those who have set index starting from 0 independent of the aruco id is also considered correct. However the above method is the correct method which you should follow in future.
 		
 
 
